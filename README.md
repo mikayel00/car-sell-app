@@ -2,7 +2,7 @@
 ## Installation
 
 ```bash
-$ git clone https://github.com/mikayel00/car-sell-app.git
+$ npm install
 ```
 
 ## Running the app

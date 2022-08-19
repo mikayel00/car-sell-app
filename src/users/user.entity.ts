@@ -1,5 +1,6 @@
 import { AfterInsert, AfterUpdate, AfterRemove, Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
+// Schema, what data must be included in creating time
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()

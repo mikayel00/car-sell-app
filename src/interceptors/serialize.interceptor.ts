@@ -11,6 +11,7 @@ export function Serialize(dto: ClassConstructor) {
   return UseInterceptors(new SerializeInterceptor(dto));
 }
 
+// Interceptor uses like middleware for requests and responds
 export class SerializeInterceptor implements NestInterceptor{
 
   constructor(private dto: any) {}

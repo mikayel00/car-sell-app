@@ -18,13 +18,15 @@ export class SerializeInterceptor implements NestInterceptor{
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     // Run something before a request is handled
 
-    return next.handle().pipe(
-      map((data:any) => {
-        // Run something before the response is sent out
-        return plainToClass(this.dto, data, {
-          excludeExtraneousValues: true,
+    return next
+      .handle()
+      .pipe(
+        map((data:any) => {
+          // Run something before the response is sent out
+          return plainToClass(this.dto, data, {
+            excludeExtraneousValues: true,
+          })
         })
-      })
-    );
+      );
   }
 }
